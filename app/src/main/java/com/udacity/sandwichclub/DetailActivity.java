@@ -12,6 +12,9 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 
 public class DetailActivity extends AppCompatActivity {
 
+    //TODO DetailActivity shows all Sandwich details correctly
+    //TODO Detail layout includes a ScrollView so all the details are visible in small screen devices
+    //TODO Sandwich details are shown in a sensible layout. For example, ingredients appear next to the ingredients label
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
