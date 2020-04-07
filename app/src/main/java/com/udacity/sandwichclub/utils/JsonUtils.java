@@ -10,8 +10,9 @@ import java.util.List;
 
 public class JsonUtils {
 
-    //TODO JSON data is parsed correctly to a Sandwich object in JsonUtils
-    //TODO JSON is parsed without using 3rd party libraries
+    private static String PLACEOFORIGIN = "placeOfOrigin";
+    private static String DESCRIPTION = "description";
+    private static String IMAGE = "image";
 
     public static Sandwich parseSandwichJson(String json) {
 
@@ -20,10 +21,10 @@ public class JsonUtils {
             JSONObject sandwichDetails = new JSONObject(json);
 
             // Convert Object Keys
-            String placeOfOrigin = sandwichDetails.getString("placeOfOrigin");
-            String description = sandwichDetails.getString("description");
-            String image = sandwichDetails.getString("image");
             JSONObject name = sandwichDetails.getJSONObject("name");
+            PLACEOFORIGIN = sandwichDetails.getString("placeOfOrigin");
+            DESCRIPTION = sandwichDetails.getString("description");
+            IMAGE = sandwichDetails.getString("image");
 
             // Converting JSON to String
             String mainName = name.getString("mainName");
@@ -41,8 +42,7 @@ public class JsonUtils {
                 ingredientsNeeded.add(ingredients.getString(i));
             }
 
-            return new Sandwich(mainName, secondName, placeOfOrigin, description, image, ingredientsNeeded);
-
+            return new Sandwich(mainName, secondName, PLACEOFORIGIN, DESCRIPTION, IMAGE, ingredientsNeeded);
 
         } catch (JSONException exc) {
             exc.printStackTrace();

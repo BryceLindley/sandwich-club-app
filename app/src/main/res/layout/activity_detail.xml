@@ -11,6 +11,7 @@
 
 
         <ImageView
+            android:contentDescription="@string/image_of_sandwich"
             android:id="@+id/image_iv"
             style="@style/ImageView" />
 
