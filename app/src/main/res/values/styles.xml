@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="textViewStyle">
+        <item name="android:layout_width">234dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewLabels">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingStart">16dp</item>
+    </style>
+
+    <style name="ImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:contentDescription">@string/sandwich_picture_content_description</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
 </resources>
