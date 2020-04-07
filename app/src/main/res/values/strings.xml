@@ -25,6 +25,8 @@
         <item>Roujiamo</item>
         <item>Shawarma</item>
         <item>Vada Pav</item>
+        <item>Rueben</item>
+        <item>TurkeyBLTA</item>
     </string-array>
 
     <string-array name="sandwich_details">
@@ -127,6 +129,21 @@
             burger.\",\"image\":\"https://upload.wikimedia.org/wikipedia/commons/1/15/Vada_Paav-The_Mumbai_Burger.jpg\",\"ingredients\":[\"Deep-fried
             mashed potato patty\",\"chilli peppers\",\"garlic\",\"ginger\",\"bread bun\"]}
         </item>
+        <item>{\"name\":{\"mainName\":\"Rueben\",\"alsoKnownAs\":[]},\"placeOfOrigin\":\"United States\"
+            ,\"description\":\"The Reuben sandwich is an American grilled sandwich composed of
+            corned beef, Swiss cheese, sauerkraut, and Russian dressing, grilled between slices of rye bread.
+            It is associated with kosher-style delicatessens, but it is not kosher, because it contains both meat and
+            cheese.\",\"image\":\"https://upload.wikimedia.org/wikipedia/commons/d/d9/Corn_beef_Reuben_sandwich.jpg\
+            ",\"ingredients\":[\"rye bread\",\"Russian dressing\",\"sauerkraut\",\"American cheese\"]}
+        </item>
+
+        <item>{\"name\":{\"mainName\":\"TurkeyBLTA\",\"alsoKnownAs\":[]},\"placeOfOrigin\":\"United States\"
+            ,\"description\":\"Southwestern Turkey BLTA Salad packed with butter lettuce, deli turkey, crispy bacon, corn, black beans, tomatoes, and a semi homemade tortilla.\",
+            \"image\":\"https://www.ourpaleolife.com/turkey-blta-roll-ups/#gallery.jpg\
+            ",\"ingredients\":[\"avocado\",\"turkey cold cuts\",\"baby spinach leaves\",\"tomato\"]}
+        </item>
+
+
     </string-array>
 
 </resources>
