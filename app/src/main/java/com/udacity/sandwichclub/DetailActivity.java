@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +56,11 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
         setViews(sandwich);
+        /*Picasso supports both download and error placeholders as optional features.
+        Placeholder drawable image will be shown until the actual image is loaded.
+        So if the user has a slow network then this placeholder image will be shown
+        instead of blank ImageView.
+        if there is any error then error placeholder image will be shown*/
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -70,11 +76,11 @@ public class DetailActivity extends AppCompatActivity {
         origin.setText(sandwich.getPlaceOfOrigin());
         description.setText(sandwich.getDescription());
         setTitle(sandwich.getMainName());
+        // List<String> ingedientList = sandwich.getIngredients();
+        // Use TextUtils.join() method instead of showing the list in square brackets [].
+        ingredients.setText(TextUtils.join("\n",sandwich.getIngredients()));
 
-        List<String> ingedientList = sandwich.getIngredients();
-        ingredients.append("" + ingedientList);
-
-        List<String> alsoKnownAsList = sandwich.getAlsoKnownAs();
-        alsoKnownAs.append("" + alsoKnownAsList);
+        //List<String> alsoKnownAsList = sandwich.getAlsoKnownAs();
+        alsoKnownAs.setText(TextUtils.join("\n",sandwich.getAlsoKnownAs()));
     }
 }
