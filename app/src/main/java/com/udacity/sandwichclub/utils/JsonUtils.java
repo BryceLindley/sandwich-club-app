@@ -29,10 +29,10 @@ public class JsonUtils {
             JSONObject parsingText = new JSONObject(json);
 
             // Convert Object Keys
-
+            // Header
             JSONObject name = parsingText.getJSONObject(KEY_NAME);
-            String mainName = name.getString(KEY_MAIN_NAME);
 
+            String mainName = name.getString(KEY_MAIN_NAME);
             String placeOfOrigin = parsingText.getString(KEY_PLACE_OF_ORIGIN);
             String description = parsingText.getString(KEY_DESCRIPTION);
             String image = parsingText.getString(KEY_IMAGE);

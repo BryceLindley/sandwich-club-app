@@ -12,8 +12,6 @@ import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
-import java.util.List;
-
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
@@ -29,11 +27,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        alsoKnownAs = findViewById(R.id.also_known_tv);
-        ingredients = findViewById(R.id.ingredients_tv);
-        origin = findViewById(R.id.origin_tv);
-        description = findViewById(R.id.description_tv);
-        ingredientsIv = findViewById(R.id.image_iv);
+        findViewById();
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -55,7 +49,7 @@ public class DetailActivity extends AppCompatActivity {
             closeOnError();
             return;
         }
-        setViews(sandwich);
+        setText(sandwich);
         /*Picasso supports both download and error placeholders as optional features.
         Placeholder drawable image will be shown until the actual image is loaded.
         So if the user has a slow network then this placeholder image will be shown
@@ -66,17 +60,25 @@ public class DetailActivity extends AppCompatActivity {
                 .into(ingredientsIv);
     }
 
+    public void findViewById() {
+        alsoKnownAs = findViewById(R.id.also_known_tv);
+        ingredients = findViewById(R.id.ingredients_tv);
+        origin = findViewById(R.id.origin_tv);
+        description = findViewById(R.id.description_tv);
+        ingredientsIv = findViewById(R.id.image_iv);
+    }
+
     private void closeOnError() {
         finish();
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    public void setViews(Sandwich sandwich) {
+    public void setText(Sandwich sandwich) {
 
         origin.setText(sandwich.getPlaceOfOrigin());
         description.setText(sandwich.getDescription());
         setTitle(sandwich.getMainName());
-        // List<String> ingedientList = sandwich.getIngredients();
+        // DELISTED List<String> ingedientList = sandwich.getIngredients();
         // Use TextUtils.join() method instead of showing the list in square brackets [].
         ingredients.setText(TextUtils.join("\n",sandwich.getIngredients()));
 
